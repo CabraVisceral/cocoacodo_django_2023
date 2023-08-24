@@ -6,6 +6,7 @@ Created on Wed Aug 23 22:23:09 2023
 """
 
 ### EJERCICIO 7
+from ejercicio_6 import Persona
 
 class Cuenta():
     def __init__(self, titular, cantidad=0):
@@ -24,8 +25,9 @@ class Cuenta():
     
     ## SETTERS ##
     
-    def definir_nombre(self, persona):            
-        self._titular = persona
+    def definir_titular(self, persona):            
+        if isinstance(persona, Persona):
+            self._titular = persona
         
     def ingresar(self, dinero):
         try:
